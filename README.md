@@ -1,25 +1,25 @@
 # App Metrics Concurrency 
 [![Official Site](https://img.shields.io/badge/site-appmetrics-blue.svg?style=flat-square)](http://app-metrics.io/getting-started/intro.html) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square)](https://opensource.org/licenses/Apache-2.0)
 
-Provides useful structures for performing efficient concurrent operations.
+Provides useful structures for performing efficient concurrent operations used my [App Metrics](https://github.com/alhardy/AppMetrics) but can be used stand alone.
 
 ## Latest Builds, Packages & Repo Stats
 
 |Branch|AppVeyor|Travis|Coverage|
 |------|:--------:|:--------:|:--------:|
-|dev|[![AppVeyor](https://img.shields.io/appveyor/ci/alhardy/concurrency/dev.svg?style=flat-square&label=appveyor%20build)](https://ci.appveyor.com/project/alhardy/concurrency/branch/dev)|[![Travis](https://img.shields.io/travis/alhardy/concurrency/dev.svg?style=flat-square&label=travis%20build)](https://travis-ci.org/alhardy/concurrency)|[![Coveralls](https://img.shields.io/coveralls/alhardy/concurrency/dev.svg?style=flat-square)](https://coveralls.io/github/alhardy/concurrency?branch=dev)
-|master|[![AppVeyor](https://img.shields.io/appveyor/ci/alhardy/concurrency/master.svg?style=flat-square&label=appveyor%20build)](https://ci.appveyor.com/project/alhardy/concurrency/branch/master)| [![Travis](https://img.shields.io/travis/alhardy/concurrency/master.svg?style=flat-square&label=travis%20build)](https://travis-ci.org/alhardy/concurrency)| [![Coveralls](https://img.shields.io/coveralls/alhardy/concurrency/master.svg?style=flat-square)](https://coveralls.io/github/alhardy/concurrency?branch=master)|
+|dev|[![AppVeyor](https://img.shields.io/appveyor/ci/alhardy/Concurrency/dev.svg?style=flat-square&label=appveyor%20build)](https://ci.appveyor.com/project/alhardy/Concurrency/branch/dev)|[![Travis](https://img.shields.io/travis/alhardy/Concurrency/dev.svg?style=flat-square&label=travis%20build)](https://travis-ci.org/alhardy/Concurrency)|[![Coveralls](https://img.shields.io/coveralls/alhardy/Concurrency/dev.svg?style=flat-square)](https://coveralls.io/github/alhardy/Concurrency?branch=dev)
+|master|[![AppVeyor](https://img.shields.io/appveyor/ci/alhardy/Concurrency/master.svg?style=flat-square&label=appveyor%20build)](https://ci.appveyor.com/project/alhardy/Concurrency/branch/master)| [![Travis](https://img.shields.io/travis/alhardy/Concurrency/master.svg?style=flat-square&label=travis%20build)](https://travis-ci.org/alhardy/Concurrency)| [![Coveralls](https://img.shields.io/coveralls/alhardy/Concurrency/master.svg?style=flat-square)](https://coveralls.io/github/alhardy/Concurrency?branch=master)|
 
 |Package|Dev Release|Pre-Release|Release|
 |------|:--------:|:--------:|:--------:|
 |App.Metrics.Concurrency|[![MyGet Status](https://img.shields.io/myget/alhardy/v/App.Metrics.Concurrency.svg?style=flat-square)](https://www.myget.org/feed/alhardy/package/nuget/App.Metrics.Concurrency)|[![NuGet Status](https://img.shields.io/nuget/vpre/App.Metrics.Concurrency.svg?style=flat-square)](https://www.nuget.org/packages/App.Metrics.Concurrency/)|[![NuGet Status](https://img.shields.io/nuget/v/App.Metrics.Concurrency.svg?style=flat-square)](https://www.nuget.org/packages/App.Metrics.Concurrency/)|
 
-[![GitHub issues](https://img.shields.io/github/issues/alhardy/concurrency.svg?style=flat-square&maxAge=7200)](https://github.com/alhardy/concurrency/issues?q=is%3Aopen+is%3Aissue) [![GitHub closed issues](https://img.shields.io/github/issues-closed/alhardy/concurrency.svg?style=flat-square&maxAge=7200)](https://github.com/alhardy/concurrency/issues?q=is%3Aissue+is%3Aclosed) [![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/alhardy/concurrency.svg?style=flat-square&maxAge=7200)](https://github.com/alhardy/concurrency/pulls?q=is%3Apr+is%3Aclosed) [![Issue Stats](https://img.shields.io/issuestats/p/long/github/alhardy/concurrency.svg?style=flat-square&maxAge=7200)](http://www.issuestats.com/github/alhardy/concurrency) [![Issue Stats](https://img.shields.io/issuestats/i/github/alhardy/concurrency.svg?style=flat-square&maxAge=7200)](http://www.issuestats.com/github/alhardy/concurrency)
+[![GitHub issues](https://img.shields.io/github/issues/alhardy/Concurrency.svg?style=flat-square&maxAge=7200)](https://github.com/alhardy/Concurrency/issues?q=is%3Aopen+is%3Aissue) [![GitHub closed issues](https://img.shields.io/github/issues-closed/alhardy/Concurrency.svg?style=flat-square&maxAge=7200)](https://github.com/alhardy/Concurrency/issues?q=is%3Aissue+is%3Aclosed) [![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/alhardy/Concurrency.svg?style=flat-square&maxAge=7200)](https://github.com/alhardy/Concurrency/pulls?q=is%3Apr+is%3Aclosed) [![Issue Stats](https://img.shields.io/issuestats/p/long/github/alhardy/Concurrency.svg?style=flat-square&maxAge=7200)](http://www.issuestats.com/github/alhardy/Concurrency) [![Issue Stats](https://img.shields.io/issuestats/i/github/alhardy/Concurrency.svg?style=flat-square&maxAge=7200)](http://www.issuestats.com/github/alhardy/Concurrency)
 ----------
 
 ## How to build
 
-[AppVeyor](https://ci.appveyor.com/project/alhardy/concurrency/branch/master) and [Travis CI](https://travis-ci.org/alhardy/concurrency) builds are triggered on commits and PRs to `dev` and `master` branches.
+[AppVeyor](https://ci.appveyor.com/project/alhardy/Concurrency/branch/master) and [Travis CI](https://travis-ci.org/alhardy/Concurrency) builds are triggered on commits and PRs to `dev` and `master` branches.
 
 See the following for build arguments and running locally.
 

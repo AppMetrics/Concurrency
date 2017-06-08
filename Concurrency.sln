@@ -1,0 +1,88 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4EF3D96F-D5C4-4E07-B9BD-34A029C1DFD1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{34F7982C-486D-480A-BAC8-FC76144C1364}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3C63709F-CC84-430F-A5DB-B5B4EA4EAD15}"
+	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
+		app-metrics.licenseheader = app-metrics.licenseheader
+		AppMetrics.ruleset = AppMetrics.ruleset
+		appveyor.yml = appveyor.yml
+		global.json = global.json
+		stylecop.json = stylecop.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchmarks", "benchmarks", "{0885F855-702E-4259-A78B-105E414B543A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{29C5DC0B-EBE6-417D-87EC-7FB49AE5792C}"
+	ProjectSection(SolutionItems) = preProject
+		build\common.props = build\common.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cake", "Cake", "{52567FCB-1B58-422C-A453-24EDE61514CE}"
+	ProjectSection(SolutionItems) = preProject
+		build.cake = build.cake
+		build.ps1 = build.ps1
+		build.sh = build.sh
+		tools\packages.config = tools\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Git", "Git", "{D9190CAB-7A34-4F59-B189-7C0DA496209D}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		GitReleaseManager.yaml = GitReleaseManager.yaml
+		ISSUE_TEMPLATE.md = ISSUE_TEMPLATE.md
+		PULL_REQUEST_TEMPLATE.md = PULL_REQUEST_TEMPLATE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Metrics.Concurrency", "src\App.Metrics.Concurrency\App.Metrics.Concurrency.csproj", "{A59CB596-4130-48BC-B25E-ADF41E0E631A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Metrics.Concurrency.Facts", "test\App.Metrics.Concurrency.Facts\App.Metrics.Concurrency.Facts.csproj", "{D11AF351-8A98-4EA6-AD79-06B80C603266}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Metrics.Concurrency.Benchmarks", "benchmarks\App.Metrics.Concurrency.Benchmarks\App.Metrics.Concurrency.Benchmarks.csproj", "{24085FAB-3629-46A8-A037-07561AE7EBCD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Metrics.Concurrency..Benchmarks.Runner", "benchmarks\App.Metrics.Concurrency.Benchmarks.Runner\App.Metrics.Concurrency..Benchmarks.Runner.csproj", "{53F53DDF-9DDA-4AA1-8944-871BFA66D79C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A59CB596-4130-48BC-B25E-ADF41E0E631A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A59CB596-4130-48BC-B25E-ADF41E0E631A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A59CB596-4130-48BC-B25E-ADF41E0E631A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A59CB596-4130-48BC-B25E-ADF41E0E631A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D11AF351-8A98-4EA6-AD79-06B80C603266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D11AF351-8A98-4EA6-AD79-06B80C603266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D11AF351-8A98-4EA6-AD79-06B80C603266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D11AF351-8A98-4EA6-AD79-06B80C603266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24085FAB-3629-46A8-A037-07561AE7EBCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24085FAB-3629-46A8-A037-07561AE7EBCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24085FAB-3629-46A8-A037-07561AE7EBCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24085FAB-3629-46A8-A037-07561AE7EBCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53F53DDF-9DDA-4AA1-8944-871BFA66D79C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F53DDF-9DDA-4AA1-8944-871BFA66D79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F53DDF-9DDA-4AA1-8944-871BFA66D79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F53DDF-9DDA-4AA1-8944-871BFA66D79C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{29C5DC0B-EBE6-417D-87EC-7FB49AE5792C} = {3C63709F-CC84-430F-A5DB-B5B4EA4EAD15}
+		{52567FCB-1B58-422C-A453-24EDE61514CE} = {3C63709F-CC84-430F-A5DB-B5B4EA4EAD15}
+		{D9190CAB-7A34-4F59-B189-7C0DA496209D} = {3C63709F-CC84-430F-A5DB-B5B4EA4EAD15}
+		{A59CB596-4130-48BC-B25E-ADF41E0E631A} = {4EF3D96F-D5C4-4E07-B9BD-34A029C1DFD1}
+		{D11AF351-8A98-4EA6-AD79-06B80C603266} = {34F7982C-486D-480A-BAC8-FC76144C1364}
+		{24085FAB-3629-46A8-A037-07561AE7EBCD} = {0885F855-702E-4259-A78B-105E414B543A}
+		{53F53DDF-9DDA-4AA1-8944-871BFA66D79C} = {0885F855-702E-4259-A78B-105E414B543A}
+	EndGlobalSection
+EndGlobal

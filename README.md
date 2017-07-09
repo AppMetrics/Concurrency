@@ -12,7 +12,7 @@ Provides useful structures for performing efficient concurrent operations used m
 
 |Package|Dev Release|Pre-Release|Release|
 |------|:--------:|:--------:|:--------:|
-|App.Metrics.Concurrency|[![MyGet Status](https://img.shields.io/myget/AppMetrics/v/App.Metrics.Concurrency.svg?style=flat-square)](https://www.myget.org/feed/AppMetrics/package/nuget/App.Metrics.Concurrency)|[![NuGet Status](https://img.shields.io/nuget/vpre/App.Metrics.Concurrency.svg?style=flat-square)](https://www.nuget.org/packages/App.Metrics.Concurrency/)|[![NuGet Status](https://img.shields.io/nuget/v/App.Metrics.Concurrency.svg?style=flat-square)](https://www.nuget.org/packages/App.Metrics.Concurrency/)|
+|App.Metrics.Concurrency|[![MyGet Status](https://img.shields.io/myget/appmetrics/v/App.Metrics.Concurrency.svg?style=flat-square)](https://www.myget.org/feed/appmetrics/package/nuget/App.Metrics.Concurrency)|[![NuGet Status](https://img.shields.io/nuget/vpre/App.Metrics.Concurrency.svg?style=flat-square)](https://www.nuget.org/packages/App.Metrics.Concurrency/)|[![NuGet Status](https://img.shields.io/nuget/v/App.Metrics.Concurrency.svg?style=flat-square)](https://www.nuget.org/packages/App.Metrics.Concurrency/)|
 ----------
 
 ## How to build

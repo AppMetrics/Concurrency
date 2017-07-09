@@ -65,10 +65,10 @@ if (!string.IsNullOrEmpty(preReleaseSuffix))
 {
 	versionSuffix = preReleaseSuffix + "-" + buildNumber.ToString("D4");
 }
- else if (AppVeyor.IsRunningOnAppVeyor && !AppVeyor.Environment.Repository.Tag.IsTag)
- {
- 	versionSuffix = buildNumber.ToString("D4");
- }
+else if (AppVeyor.IsRunningOnAppVeyor && !AppVeyor.Environment.Repository.Tag.IsTag)
+{
+	versionSuffix = buildNumber.ToString("D4");
+}
 
 
 //////////////////////////////////////////////////////////////////////

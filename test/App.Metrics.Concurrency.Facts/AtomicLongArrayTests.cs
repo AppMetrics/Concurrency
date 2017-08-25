@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="AtomicLongArrayTests.cs" company="Allan Hardy">
+// Copyright (c) Allan Hardy. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using FluentAssertions;
@@ -9,7 +13,7 @@ namespace App.Metrics.Concurrency.Facts
     public class AtomicLongArrayTests
     {
         [Fact]
-        public void can_compare_and_set()
+        public void Can_compare_and_set()
         {
             var array = new AtomicLongArray(10);
 
@@ -23,14 +27,14 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_create_array()
+        public void Can_create_array()
         {
             var array = new AtomicLongArray(10);
             array.Length.Should().Be(10);
         }
 
         [Fact]
-        public void can_decrement()
+        public void Can_decrement()
         {
             var array = new AtomicLongArray(10);
 
@@ -44,7 +48,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_estimate_size()
+        public void Can_estimate_size()
         {
             var list = new ReadOnlyCollection<long>(new List<long> { 1, 2, 3 });
             var array = new AtomicLongArray(list);
@@ -53,7 +57,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_add()
+        public void Can_get_and_add()
         {
             var array = new AtomicLongArray(1);
             array.Add(0, 1);
@@ -64,7 +68,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_decrement()
+        public void Can_get_and_decrement()
         {
             var array = new AtomicLongArray(1);
             array.Add(0, 10);
@@ -75,7 +79,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_increment()
+        public void Can_get_and_increment()
         {
             var array = new AtomicLongArray(1);
             array.Add(0, 10);
@@ -86,7 +90,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_set_value()
+        public void Can_get_and_set_value()
         {
             var array = new AtomicLongArray(10);
 
@@ -101,7 +105,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_increment()
+        public void Can_increment()
         {
             var array = new AtomicLongArray(10);
 
@@ -115,7 +119,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_instiate_from_list()
+        public void Can_instiate_from_list()
         {
             var list = new ReadOnlyCollection<long>(new List<long> { 1, 2, 3 });
             var array = new AtomicLongArray(list);
@@ -127,7 +131,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void negetive_length_throws()
+        public void Negetive_length_throws()
         {
             Action setupAction = () =>
             {

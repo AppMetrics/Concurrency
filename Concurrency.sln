@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4EF3D96F-D5C4-4E07-B9BD-34A029C1DFD1}"
 EndProject
@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		appveyor.yml = appveyor.yml
 		global.json = global.json
 		stylecop.json = stylecop.json
+		version.props = version.props
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchmarks", "benchmarks", "{0885F855-702E-4259-A78B-105E414B543A}"
@@ -22,6 +23,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{29C5DC0B-EBE6-417D-87EC-7FB49AE5792C}"
 	ProjectSection(SolutionItems) = preProject
 		build\common.props = build\common.props
+		build\dependencies.props = build\dependencies.props
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cake", "Cake", "{52567FCB-1B58-422C-A453-24EDE61514CE}"
@@ -84,5 +86,8 @@ Global
 		{D11AF351-8A98-4EA6-AD79-06B80C603266} = {34F7982C-486D-480A-BAC8-FC76144C1364}
 		{24085FAB-3629-46A8-A037-07561AE7EBCD} = {0885F855-702E-4259-A78B-105E414B543A}
 		{53F53DDF-9DDA-4AA1-8944-871BFA66D79C} = {0885F855-702E-4259-A78B-105E414B543A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E0A116C-23F1-4673-B33B-0C80678172ED}
 	EndGlobalSection
 EndGlobal

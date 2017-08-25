@@ -1,4 +1,8 @@
-﻿using System.Runtime.InteropServices;
+﻿// <copyright file="AtomicIntegerTests.cs" company="Allan Hardy">
+// Copyright (c) Allan Hardy. All rights reserved.
+// </copyright>
+
+using System.Runtime.InteropServices;
 using FluentAssertions;
 using Xunit;
 
@@ -6,17 +10,17 @@ namespace App.Metrics.Concurrency.Facts
 {
     public class AtomicIntegerTests
     {
-        private AtomicInteger _num = new AtomicInteger();
+        private AtomicInteger _num = new AtomicInteger(0);
 
         [Fact]
-        public void can_add_value()
+        public void Can_add_value()
         {
             _num.Add(7).Should().Be(7);
             _num.GetValue().Should().Be(7);
         }
 
         [Fact]
-        public void can_be_assigned()
+        public void Can_be_assigned()
         {
             _num.SetValue(10);
             AtomicInteger y = _num;
@@ -24,20 +28,20 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_be_created_with_value()
+        public void Can_be_created_with_value()
         {
             new AtomicInteger(5).GetValue().Should().Be(5);
         }
 
         [Fact]
-        public void can_be_decremented()
+        public void Can_be_decremented()
         {
             _num.Decrement().Should().Be(-1);
             _num.GetValue().Should().Be(-1);
         }
 
         [Fact]
-        public void can_be_decremented_multiple_times()
+        public void Can_be_decremented_multiple_times()
         {
             _num.Decrement().Should().Be(-1);
             _num.Decrement().Should().Be(-2);
@@ -47,14 +51,14 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_be_incremented()
+        public void Can_be_incremented()
         {
             _num.Increment().Should().Be(1);
             _num.GetValue().Should().Be(1);
         }
 
         [Fact]
-        public void can_be_incremented_multiple_times()
+        public void Can_be_incremented_multiple_times()
         {
             _num.Increment().Should().Be(1);
             _num.GetValue().Should().Be(1);
@@ -67,7 +71,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_compare_and_swap()
+        public void Can_compare_and_swap()
         {
             _num.SetValue(10);
 
@@ -79,7 +83,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_decrement()
+        public void Can_get_and_decrement()
         {
             _num.SetValue(10);
 
@@ -91,7 +95,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_increment()
+        public void Can_get_and_increment()
         {
             _num.SetValue(10);
 
@@ -103,7 +107,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_reset()
+        public void Can_get_and_reset()
         {
             _num.SetValue(32);
             _num.GetAndReset().Should().Be(32);
@@ -111,7 +115,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_set()
+        public void Can_get_and_set()
         {
             _num.SetValue(32);
             _num.GetAndSet(64).Should().Be(32);
@@ -119,7 +123,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_or_add()
+        public void Can_get_or_add()
         {
             _num.SetValue(10);
             _num.GetAndAdd(5).Should().Be(10);
@@ -127,20 +131,20 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_set_and_read_value()
+        public void Can_set_and_read_value()
         {
             _num.SetValue(32);
             _num.GetValue().Should().Be(32);
         }
 
         [Fact]
-        public void defaults_to_zero()
+        public void Defaults_to_zero()
         {
             _num.GetValue().Should().Be(0);
         }
 
         [Fact]
-        public void should_have_correct_size()
+        public void Should_have_correct_size()
         {
             AtomicInteger.SizeInBytes.Should().Be(Marshal.SizeOf<AtomicInteger>());
         }

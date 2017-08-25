@@ -1,3 +1,7 @@
+// <copyright file="AtomicIntegerArrayTests.cs" company="Allan Hardy">
+// Copyright (c) Allan Hardy. All rights reserved.
+// </copyright>
+
 using System;
 using FluentAssertions;
 using Xunit;
@@ -7,7 +11,7 @@ namespace App.Metrics.Concurrency.Facts
     public class AtomicIntegerArrayTests
     {
         [Fact]
-        public void can_add_value_to_item()
+        public void Can_add_value_to_item()
         {
             var list = new[] { 1, 2, 3 };
             var array = new AtomicIntArray(list);
@@ -18,7 +22,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_create_from_readonly_list()
+        public void Can_create_from_readonly_list()
         {
             var list = new[] { 1, 2, 3 };
             var array = new AtomicIntArray(list);
@@ -27,7 +31,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_decrement()
+        public void Can_decrement()
         {
             var list = new[] { 1, 2, 3 };
             var array = new AtomicIntArray(list);
@@ -38,7 +42,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_decrement_by_value()
+        public void Can_decrement_by_value()
         {
             var array = new AtomicIntArray(1);
 
@@ -49,7 +53,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_add()
+        public void Can_get_and_add()
         {
             var array = new AtomicIntArray(1);
 
@@ -60,7 +64,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_decrement()
+        public void Can_get_and_decrement()
         {
             var array = new AtomicIntArray(1);
 
@@ -71,7 +75,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_decrement_by_value()
+        public void Can_get_and_decrement_by_value()
         {
             var array = new AtomicIntArray(1);
 
@@ -82,7 +86,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_increment()
+        public void Can_get_and_increment()
         {
             var array = new AtomicIntArray(1);
 
@@ -93,7 +97,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_increment_by_value()
+        public void Can_get_and_increment_by_value()
         {
             var array = new AtomicIntArray(1);
 
@@ -104,7 +108,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_reset()
+        public void Can_get_and_reset()
         {
             var array = new AtomicIntArray(1);
             array.Increment(0);
@@ -117,10 +121,10 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_estimated_bytes()
+        public void Can_get_estimated_bytes()
         {
             var list = new[] { 1, 2, 3 };
-            var expected = list.Length * sizeof(int) + 16 + IntPtr.Size;
+            var expected = (list.Length * sizeof(int)) + 16 + IntPtr.Size;
             var array = new AtomicIntArray(list);
 
             var estimate = AtomicIntArray.GetEstimatedFootprintInBytes(array);
@@ -129,7 +133,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_without_volatile_read_fence_and_ordering()
+        public void Can_get_without_volatile_read_fence_and_ordering()
         {
             var array = new AtomicIntArray(1);
 
@@ -139,7 +143,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_increment_value()
+        public void Can_increment_value()
         {
             var list = new[] { 1, 2, 3 };
             var array = new AtomicIntArray(list);
@@ -150,7 +154,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_set_value()
+        public void Can_set_value()
         {
             var array = new AtomicIntArray(1);
 
@@ -159,7 +163,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_set_without_volatile_read_fence_and_ordering()
+        public void Can_set_without_volatile_read_fence_and_ordering()
         {
             var array = new AtomicIntArray(1);
 
@@ -168,7 +172,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void throws_when_lenght_smaller_than_zero()
+        public void Throws_when_lenght_smaller_than_zero()
         {
             Action action = () =>
             {

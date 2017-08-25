@@ -1,4 +1,8 @@
-﻿using System.Runtime.InteropServices;
+﻿// <copyright file="VolatileTests.cs" company="Allan Hardy">
+// Copyright (c) Allan Hardy. All rights reserved.
+// </copyright>
+
+using System.Runtime.InteropServices;
 using FluentAssertions;
 using Xunit;
 
@@ -7,7 +11,7 @@ namespace App.Metrics.Concurrency.Facts
     public class VolatileTests
     {
         [Fact]
-        public void can_get_and_set_value()
+        public void Can_get_and_set_value()
         {
             var value = new VolatileDouble(1.5);
 
@@ -17,13 +21,13 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void has_correct_size()
+        public void Has_correct_size()
         {
             VolatileDouble.SizeInBytes.Should().Be(Marshal.SizeOf<VolatileDouble>());
         }
 
         [Fact]
-        public void can_get_and_set_value_non_volatile()
+        public void Can_get_and_set_value_non_volatile()
         {
             var value = new VolatileDouble(1.5);
 

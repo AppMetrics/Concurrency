@@ -1,4 +1,8 @@
-﻿using System.Runtime.InteropServices;
+﻿// <copyright file="AtomicLongTests.cs" company="Allan Hardy">
+// Copyright (c) Allan Hardy. All rights reserved.
+// </copyright>
+
+using System.Runtime.InteropServices;
 using FluentAssertions;
 using Xunit;
 
@@ -6,17 +10,17 @@ namespace App.Metrics.Concurrency.Facts
 {
     public class AtomicLongTests
     {
-        private AtomicLong _num = new AtomicLong();
+        private AtomicLong _num = new AtomicLong(0);
 
         [Fact]
-        public void can_add_value()
+        public void Can_add_value()
         {
             _num.Add(7L).Should().Be(7L);
             _num.GetValue().Should().Be(7L);
         }
 
         [Fact]
-        public void can_be_assigned()
+        public void Can_be_assigned()
         {
             _num.SetValue(10L);
             AtomicLong y = _num;
@@ -24,7 +28,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_without_volatile_read_fence_and_ordering()
+        public void Can_get_without_volatile_read_fence_and_ordering()
         {
             _num.Add(1);
             var val = _num.NonVolatileGetValue();
@@ -32,20 +36,20 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_be_created_with_value()
+        public void Can_be_created_with_value()
         {
             new AtomicLong(5L).GetValue().Should().Be(5L);
         }
 
         [Fact]
-        public void can_be_decremented()
+        public void Can_be_decremented()
         {
             _num.Decrement().Should().Be(-1L);
             _num.GetValue().Should().Be(-1L);
         }
 
         [Fact]
-        public void can_be_decremented_mulitple_times()
+        public void Can_be_decremented_mulitple_times()
         {
             _num.Decrement().Should().Be(-1L);
             _num.Decrement().Should().Be(-2L);
@@ -55,14 +59,14 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_be_incremented()
+        public void Can_be_incremented()
         {
             _num.Increment().Should().Be(1L);
             _num.GetValue().Should().Be(1L);
         }
 
         [Fact]
-        public void can_be_incremented_multiple_times()
+        public void Can_be_incremented_multiple_times()
         {
             _num.Increment().Should().Be(1L);
             _num.GetValue().Should().Be(1L);
@@ -75,7 +79,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_compare_and_swap()
+        public void Can_compare_and_swap()
         {
             _num.SetValue(10L);
 
@@ -87,7 +91,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_add()
+        public void Can_get_and_add()
         {
             _num.SetValue(10L);
             _num.GetAndAdd(5L).Should().Be(10L);
@@ -95,7 +99,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_decrement()
+        public void Can_get_and_decrement()
         {
             _num.SetValue(10L);
 
@@ -107,7 +111,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_increment()
+        public void Can_get_and_increment()
         {
             _num.SetValue(10L);
 
@@ -119,7 +123,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_reset()
+        public void Can_get_and_reset()
         {
             _num.SetValue(32);
             _num.GetAndReset().Should().Be(32);
@@ -127,7 +131,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_get_and_set()
+        public void Can_get_and_set()
         {
             _num.SetValue(32);
             _num.GetAndSet(64).Should().Be(32);
@@ -135,20 +139,20 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void can_set_and_read_value()
+        public void Can_set_and_read_value()
         {
             _num.SetValue(32);
             _num.GetValue().Should().Be(32);
         }
 
         [Fact]
-        public void defaults_to_zero()
+        public void Defaults_to_zero()
         {
             _num.GetValue().Should().Be(0L);
         }
 
         [Fact]
-        public void shoul_have_correct_size()
+        public void Shoul_have_correct_size()
         {
             AtomicLong.SizeInBytes.Should().Be(Marshal.SizeOf<AtomicLong>());
         }

@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="BenchmarkTestExecutor.cs" company="Allan Hardy">
+// Copyright (c) Allan Hardy. All rights reserved.
+// </copyright>
+
+using System;
 using System.Linq;
 using BenchmarkDotNet.Columns;
 using BenchmarkDotNet.Configs;
@@ -77,8 +81,7 @@ namespace App.Metrics.Concurrency.Benchmarks.Support
 
             Assert.True(
                 summary.Reports.All(r => r.BuildResult.IsBuildSuccess),
-                "The following benchmarks are failed to build: " +
-                string.Join(", ", summary.Reports.Where(r => !r.BuildResult.IsBuildSuccess).Select(r => r.Benchmark.DisplayInfo)));
+                "The following benchmarks are failed to build: " + string.Join(", ", summary.Reports.Where(r => !r.BuildResult.IsBuildSuccess).Select(r => r.Benchmark.DisplayInfo)));
 
             Assert.True(
                 summary.Reports.All(r => r.ExecuteResults.Any(er => er.FoundExecutable && er.Data.Any())),
@@ -93,9 +96,8 @@ namespace App.Metrics.Concurrency.Benchmarks.Support
 
         private IConfig CreateSimpleConfig(OutputLogger logger = null)
         {
-            return new SingleRunFastConfig()
-                .With(logger ?? (_output != null ? new OutputLogger(_output) : ConsoleLogger.Default))
-                .With(DefaultColumnProviders.Instance);
+            return new SingleRunFastConfig().With(logger ?? (_output != null ? new OutputLogger(_output) : ConsoleLogger.Default)).
+                                             With(DefaultColumnProviders.Instance);
         }
     }
 }

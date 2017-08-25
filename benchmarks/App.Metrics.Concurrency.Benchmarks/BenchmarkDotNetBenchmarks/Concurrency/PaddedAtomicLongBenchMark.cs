@@ -1,5 +1,6 @@
+// <copyright file="PaddedAtomicLongBenchMark.cs" company="Allan Hardy">
 // Copyright (c) Allan Hardy. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
+// </copyright>
 
 using BenchmarkDotNet.Attributes;
 
@@ -9,10 +10,10 @@ namespace App.Metrics.Concurrency.Benchmarks.BenchmarkDotNetBenchmarks.Concurren
     {
         private PaddedAtomicLong _num;
 
-        [Setup]
+        [GlobalSetup]
         public override void Setup()
         {
-            _num = new PaddedAtomicLong();
+            _num = new PaddedAtomicLong(0);
         }
 
         [Benchmark]

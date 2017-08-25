@@ -1,17 +1,21 @@
-﻿using System;
+﻿// <copyright file="AtomicLongCompareBenchmark.cs" company="Allan Hardy">
+// Copyright (c) Allan Hardy. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using App.Metrics.Concurrency.Internal;
 using BenchmarkDotNet.Attributes;
 
 namespace App.Metrics.Concurrency.Benchmarks.BenchmarkDotNetBenchmarks.Concurrency
-{    
+{
     public class AtomicLongCompareBenchmark : DefaultBenchmarkBase
     {
         private const int NumberOfRuns = 50;
         private int _threadCount;
 
-        [Setup]
+        [GlobalSetup]
         public override void Setup()
         {
             _threadCount = Environment.ProcessorCount;
@@ -41,7 +45,8 @@ namespace App.Metrics.Concurrency.Benchmarks.BenchmarkDotNetBenchmarks.Concurren
             Run<ThreadLocalLongAdder>();
         }
 
-        private void Run<T>() where T : IValueAdder<long>, new()
+        private void Run<T>()
+            where T : IValueAdder<long>, new()
         {
             var value = new T();
             var thread = new List<Thread>();

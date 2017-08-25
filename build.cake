@@ -58,7 +58,7 @@ var openCoverFilter				= "+[App.Metrics*]* -[xunit.*]* -[*.Facts]*";
 var openCoverExcludeFile        = "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs";
 var coverIncludeFilter			= "+:App.Metrics*";
 var coverExcludeFilter			= "-:*.Facts";
-var excludeFromCoverage			= "*.AppMetricsExcludeFromCodeCoverage*";
+var excludeFromCoverage			= "*.ExcludeFromCodeCoverage*";
 string versionSuffix			= null;
 
 if (!string.IsNullOrEmpty(preReleaseSuffix))
@@ -150,7 +150,8 @@ Task("Build")
 
 			if (parsedProject.IsLibrary() && !project.Path.ToString().Contains(".Sandbox")&& !project.Path.ToString().Contains(".Facts") && !project.Path.ToString().Contains(".Benchmarks"))
 			{				
-				settings.Framework = "netstandard2.0";				
+				settings.Framework = "netstandard2.0";
+
 			}
 			else
 			{
@@ -220,7 +221,7 @@ Task("RunTests")
         var settings = new DotNetCoreTestSettings
 		{
 			Configuration = configuration,
-			// Workaround to fixing pre-release version package references - https://github.com/NuGet/Home/issues/4337
+			 // Workaround to fixing pre-release version package references - https://github.com/NuGet/Home/issues/4337
 			 ArgumentCustomization = args=>args.Append("--logger:trx /t:Restore /p:RestoreSources=https://api.nuget.org/v3/index.json;https://www.myget.org/F/appmetrics/api/v3/index.json;")
 		};
 		

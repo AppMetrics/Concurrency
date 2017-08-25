@@ -1,4 +1,7 @@
 <Project>
+  <Import Project="dependencies.props" />
+  <Import Project="..\version.props" />
+  
 	<PropertyGroup>
 		<Copyright>Allan Hardy 2016</Copyright>
 		<Authors>Allan Hardy</Authors>
@@ -7,14 +10,17 @@
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageIconUrl>http://app-metrics.io/logo.png</PackageIconUrl>
 		<PackageProjectUrl>http://app-metrics.io/</PackageProjectUrl>
-		<PackageLicenseUrl>https://github.com/alhardy/Concurrency/blob/master/LICENSE</PackageLicenseUrl>
+		<PackageLicenseUrl>https://github.com/AppMetrics/Concurrency/blob/master/LICENSE</PackageLicenseUrl>
 		<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>git://github.com/alhardy/Concurrency</RepositoryUrl>
+		<RepositoryUrl>git://github.com/AppMetrics/Concurrency</RepositoryUrl>
 		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
 		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
 		<GenerateNeutralResourcesLanguageAttribute>false</GenerateNeutralResourcesLanguageAttribute>
 		<GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-		<CodeAnalysisRuleSet>..\..\AppMetrics.ruleset</CodeAnalysisRuleSet>		
+		<CodeAnalysisRuleSet>..\..\AppMetrics.ruleset</CodeAnalysisRuleSet>
+	  <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)Key.snk</AssemblyOriginatorKeyFile>
+	  <SignAssembly>true</SignAssembly>
+	  <PublicSign Condition="'$(OS)' != 'Windows_NT'">true</PublicSign>
 	</PropertyGroup>
 
 	<ItemGroup>

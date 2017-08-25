@@ -1,5 +1,6 @@
+// <copyright file="ThreadLocalLongAdderBenchMark.cs" company="Allan Hardy">
 // Copyright (c) Allan Hardy. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
+// </copyright>
 
 using BenchmarkDotNet.Attributes;
 
@@ -9,7 +10,7 @@ namespace App.Metrics.Concurrency.Benchmarks.BenchmarkDotNetBenchmarks.Concurren
     {
         private ThreadLocalLongAdder _num;
 
-        [Setup]
+        [GlobalSetup]
         public override void Setup()
         {
             _num = new ThreadLocalLongAdder();

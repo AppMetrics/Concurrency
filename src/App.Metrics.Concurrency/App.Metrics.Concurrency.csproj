@@ -5,25 +5,12 @@
   <PropertyGroup>
     <Description>Provides useful structures for performing efficient concurrent operations. Original Project: https://github.com/etishor/ConcurrencyUtilities, including a port of Java's LongAdder and Striped64 classes</Description>
     <AssemblyTitle>App.Metrics.Concurrency</AssemblyTitle>
-    <TargetFrameworks>netstandard1.3;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard1.1</TargetFrameworks>
     <AssemblyName>App.Metrics.Concurrency</AssemblyName>
     <PackageId>App.Metrics.Concurrency</PackageId>
     <PackageTags>Concurrency;Atomic</PackageTags>
     <!--Required for OpenCover-->
 	  <DebugType>full</DebugType>
   </PropertyGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
-    <PackageReference Include="System.Threading.Thread" Version="4.3.0" />    
-  </ItemGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <DefineConstants>$(DefineConstants);CLASSIC</DefineConstants>
-  </PropertyGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
 
 </Project>

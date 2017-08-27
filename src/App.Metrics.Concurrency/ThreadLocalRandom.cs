@@ -16,8 +16,9 @@ namespace App.Metrics.Concurrency
     public static class ThreadLocalRandom
     {
         private static readonly ThreadLocal<Random> LocalRandom = new ThreadLocal<Random>(
-            () =>
-                new Random(Thread.CurrentThread.ManagedThreadId));
+            () => new Random(Interlocked.Increment(ref _seed)));
+
+        private static int _seed = Environment.TickCount;
 
         public static int Next() { return LocalRandom.Value.Next(); }
 

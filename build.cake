@@ -18,7 +18,7 @@ var target                      = Argument("target", "Default");
 var configuration               = HasArgument("BuildConfiguration") ? Argument<string>("BuildConfiguration") :
                                   EnvironmentVariable("BuildConfiguration") != null ? EnvironmentVariable("BuildConfiguration") : "Release";
 var coverWith					= HasArgument("CoverWith") ? Argument<string>("CoverWith") :
-                                  EnvironmentVariable("CoverWith") != null ? EnvironmentVariable("CoverWith") : "OpenCover"; // None, DotCover, OpenCover
+                                  EnvironmentVariable("CoverWith") != null ? EnvironmentVariable("CoverWith") : "DotCover"; // None, DotCover, OpenCover
 var skipReSharperCodeInspect    = HasArgument("SkipCodeInspect") ? Argument<bool>("SkipCodeInspect", false) || !IsRunningOnWindows(): true;
 var preReleaseSuffix            = HasArgument("PreReleaseSuffix") ? Argument<string>("PreReleaseSuffix") :
 	                              (AppVeyor.IsRunningOnAppVeyor && EnvironmentVariable("PreReleaseSuffix") == null) || (AppVeyor.IsRunningOnAppVeyor && AppVeyor.Environment.Repository.Tag.IsTag) ? null :

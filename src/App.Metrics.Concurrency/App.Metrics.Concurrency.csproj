@@ -5,7 +5,8 @@
   <PropertyGroup>
     <Description>Provides useful structures for performing efficient concurrent operations. Original Project: https://github.com/etishor/ConcurrencyUtilities, including a port of Java's LongAdder and Striped64 classes</Description>
     <AssemblyTitle>App.Metrics.Concurrency</AssemblyTitle>
-    <TargetFrameworks>netstandard1.1</TargetFrameworks>
+    <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">netstandard1.1;net45</TargetFrameworks>
+    <TargetFrameworks Condition="'$(OS)' != 'Windows_NT'">netstandard1.1</TargetFrameworks>
     <AssemblyName>App.Metrics.Concurrency</AssemblyName>
     <PackageId>App.Metrics.Concurrency</PackageId>
     <PackageTags>Concurrency;Atomic</PackageTags>

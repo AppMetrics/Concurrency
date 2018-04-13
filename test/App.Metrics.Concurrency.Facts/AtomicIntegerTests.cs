@@ -143,10 +143,12 @@ namespace App.Metrics.Concurrency.Facts
             _num.GetValue().Should().Be(0);
         }
 
+#if !NET45
         [Fact]
         public void Should_have_correct_size()
         {
             AtomicInteger.SizeInBytes.Should().Be(Marshal.SizeOf<AtomicInteger>());
         }
+#endif
     }
 }

@@ -1,5 +1,5 @@
-﻿// <copyright file="AtomicLongTests.cs" company="Allan Hardy">
-// Copyright (c) Allan Hardy. All rights reserved.
+﻿// <copyright file="AtomicLongTests.cs" company="App Metrics Contributors">
+// Copyright (c) App Metrics Contributors. All rights reserved.
 // </copyright>
 
 #if !NET45

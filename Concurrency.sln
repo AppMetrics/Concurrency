@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.3
+VisualStudioVersion = 15.0.26906.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4EF3D96F-D5C4-4E07-B9BD-34A029C1DFD1}"
 	ProjectSection(SolutionItems) = preProject
@@ -30,6 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{29C5DC0B
 	ProjectSection(SolutionItems) = preProject
 		build\common.props = build\common.props
 		build\dependencies.props = build\dependencies.props
+		version.props = version.props
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cake", "Cake", "{52567FCB-1B58-422C-A453-24EDE61514CE}"

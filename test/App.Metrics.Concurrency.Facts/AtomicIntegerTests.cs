@@ -1,5 +1,5 @@
-﻿// <copyright file="AtomicIntegerTests.cs" company="Allan Hardy">
-// Copyright (c) Allan Hardy. All rights reserved.
+﻿// <copyright file="AtomicIntegerTests.cs" company="App Metrics Contributors">
+// Copyright (c) App Metrics Contributors. All rights reserved.
 // </copyright>
 
 using System.Runtime.InteropServices;
@@ -143,10 +143,12 @@ namespace App.Metrics.Concurrency.Facts
             _num.GetValue().Should().Be(0);
         }
 
+#if !NET45
         [Fact]
         public void Should_have_correct_size()
         {
             AtomicInteger.SizeInBytes.Should().Be(Marshal.SizeOf<AtomicInteger>());
         }
+#endif
     }
 }

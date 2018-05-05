@@ -1,8 +1,10 @@
-﻿// <copyright file="AtomicLongTests.cs" company="Allan Hardy">
-// Copyright (c) Allan Hardy. All rights reserved.
+﻿// <copyright file="AtomicLongTests.cs" company="App Metrics Contributors">
+// Copyright (c) App Metrics Contributors. All rights reserved.
 // </copyright>
 
+#if !NET45
 using System.Runtime.InteropServices;
+#endif
 using FluentAssertions;
 using Xunit;
 
@@ -36,10 +38,7 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void Can_be_created_with_value()
-        {
-            new AtomicLong(5L).GetValue().Should().Be(5L);
-        }
+        public void Can_be_created_with_value() { new AtomicLong(5L).GetValue().Should().Be(5L); }
 
         [Fact]
         public void Can_be_decremented()
@@ -146,15 +145,14 @@ namespace App.Metrics.Concurrency.Facts
         }
 
         [Fact]
-        public void Defaults_to_zero()
-        {
-            _num.GetValue().Should().Be(0L);
-        }
+        public void Defaults_to_zero() { _num.GetValue().Should().Be(0L); }
 
+#if !NET45
         [Fact]
         public void Shoul_have_correct_size()
         {
             AtomicLong.SizeInBytes.Should().Be(Marshal.SizeOf<AtomicLong>());
         }
+#endif
     }
 }

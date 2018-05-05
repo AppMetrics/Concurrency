@@ -1,0 +1,13 @@
+<Project>
+
+  <Import Project="..\build\common.props" />
+
+  <PropertyGroup>
+    <AppMetricsBuild>netstandard1.1</AppMetricsBuild>
+    <AppMetricsBuild Condition=" '$(OS)' == 'Windows_NT' ">$(AppMetricsBuild);net45</AppMetricsBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.0" PrivateAssets="All" /> 
+  </ItemGroup>
+</Project>

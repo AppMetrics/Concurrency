@@ -1,8 +1,10 @@
-﻿// <copyright file="VolatileTests.cs" company="Allan Hardy">
-// Copyright (c) Allan Hardy. All rights reserved.
+﻿// <copyright file="VolatileTests.cs" company="App Metrics Contributors">
+// Copyright (c) App Metrics Contributors. All rights reserved.
 // </copyright>
 
+#if !NET45
 using System.Runtime.InteropServices;
+#endif
 using FluentAssertions;
 using Xunit;
 
@@ -20,11 +22,13 @@ namespace App.Metrics.Concurrency.Facts
             value.GetValue().Should().Be(2.3);
         }
 
+#if !NET45
         [Fact]
         public void Has_correct_size()
         {
             VolatileDouble.SizeInBytes.Should().Be(Marshal.SizeOf<VolatileDouble>());
         }
+#endif
 
         [Fact]
         public void Can_get_and_set_value_non_volatile()

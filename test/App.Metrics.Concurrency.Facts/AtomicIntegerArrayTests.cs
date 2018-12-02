@@ -179,7 +179,7 @@ namespace App.Metrics.Concurrency.Facts
                 var unused = new AtomicIntArray(-2);
             };
 
-            action.ShouldThrow<ArgumentException>();
+            action.Should().Throw<ArgumentException>();
         }
     }
 }

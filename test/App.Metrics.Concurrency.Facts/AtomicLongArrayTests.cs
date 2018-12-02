@@ -138,7 +138,7 @@ namespace App.Metrics.Concurrency.Facts
                 var unused = new AtomicLongArray(-1);
             };
 
-            setupAction.ShouldThrow<ArgumentException>();
+            setupAction.Should().Throw<ArgumentException>();
         }
     }
 }
